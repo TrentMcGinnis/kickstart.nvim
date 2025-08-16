@@ -41,6 +41,7 @@ return {
       -- This opens a window that shows you all of the keymaps for the current
       -- Telescope picker. This is really useful to discover what Telescope can
       -- do as well as how to actually do it!
+      local actions = require 'telescope.actions'
 
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
@@ -48,11 +49,14 @@ return {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          mappings = {
+            i = {
+              ['<C-t>'] = actions.select_vertical,
+              ['<C-d>'] = actions.delete_buffer + actions.move_to_top,
+            },
+          },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {

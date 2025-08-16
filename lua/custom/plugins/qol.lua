@@ -1,12 +1,4 @@
 return {
-  {
-    'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
-    opts = {
-      on_space_options = {
-        ['expandtab'] = true,
-      },
-    },
-  },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -248,5 +240,11 @@ return {
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
+  },
+  {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle' },
+    ft = { 'markdown' },
+    build = 'cd app && npm install',
   },
 }
